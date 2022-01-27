@@ -38,6 +38,20 @@ export default function Appointment(props) {
       .catch((error) => transition(ERROR_SAVE, true));
   }
 
+  function editing(name, interviewer) {
+    const interview = {
+      student: name,
+      interviewer
+    };
+    transition(SAVING);
+    props
+      .editInterview(props.id, interview)
+      .then((response) => {
+        transition(SHOW);
+      })
+      .catch((error) => transition(ERROR_SAVE, true));
+  }
+
   const deleting = () => {
     transition(DELETE, true);
 
@@ -87,7 +101,7 @@ export default function Appointment(props) {
         <Form
           interviewers={props.interviewers}
           onCancel={back}
-          onSave={save}
+          onSave={editing}
           student={props.interview.student}
           interviewer={props.interview.interviewer}
         />
@@ -101,12 +115,12 @@ export default function Appointment(props) {
         />
       )}
       {mode === ERROR_SAVE && (
-        <Error message="Looks like we ran into an error while fetching the data"
+        <Error message="Looks like we ran into an error while saving the data"
           onClose={back} 
         />
       )}
       {mode === ERROR_DELETE && (
-        <Error message="Looks like we ran into an error while fetching the data"
+        <Error message="Looks like we ran into an error while deleting the data"
         onClose={back} 
         />
       )}
