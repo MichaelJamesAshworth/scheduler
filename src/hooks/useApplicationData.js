@@ -91,8 +91,6 @@ export default function useApplicationData() {
     })
   }
 
-  
-
   useEffect(() => {
     Promise.all([
       axios.get(`/api/days`),
@@ -107,6 +105,7 @@ export default function useApplicationData() {
         interviewers: interviewers.data,
       });
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {setDay, bookInterview, cancelInterview, editInterview, state};

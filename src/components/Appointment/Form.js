@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
-import { validate } from "eslint/lib/util/ajv";
 
 export default function Form(props) {
 
@@ -23,12 +22,15 @@ export default function Form(props) {
   };
 
   const validate = function () {
-    if (student === "") {
-      setError("Student name cannot be blank");
-      return;
+    if (!student) {
+      return setError("Student name cannot be blank");
     }
-    setError("");
+
+    if (!interviewer) {
+      return setError("You need to select an interviewer");
+    }
     props.onSave(student, interviewer);
+    reset();
   };
 
   return (
