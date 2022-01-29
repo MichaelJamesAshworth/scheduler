@@ -22,4 +22,7 @@ npm test
 npm run storybook
 ```
 
-## Booking A Interview
+## Screenshots
+
+# Booking A Interview
+!["Booking an interview"] (https://github.com/MichaelJamesAshworth/scheduler/blob/master/docs/appointment-form.png?raw=true)
