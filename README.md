@@ -25,4 +25,4 @@ npm run storybook
 ## Screenshots
 
 # Booking A Interview
-!["Booking an interview"] (https://github.com/MichaelJamesAshworth/scheduler/blob/master/docs/appointment-form.png?raw=true)
+!["Booking an interview"] (https://raw.githubusercontent.com/MichaelJamesAshworth/scheduler/master/docs/appointment-form.png)
