@@ -1,6 +1,6 @@
 # Interview Scheduler
 
-Interview Scheduler is a simple, easy to use application that is rendered via React.
+Interview Scheduler is a simple, easy to use application that is rendered via React. To get started, please refer to the instructions below:
 
 ## Setup
 
